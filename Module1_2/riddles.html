@@ -1,0 +1,51 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+// Игра в загадки. На первую загадку возможно три варианта правильного ответа и один дополнительный вариант.
+
+	var rightAnswers = 0;
+	
+	var answer11 = "ель";
+	var answer12 = "елка";
+	var answer13 = "елочка";
+	var answer14 = "кровища";
+	var answer2 = "лампочка";
+	var answer3 = "одуванчик";
+
+	alert("Поиграем в загадки?");
+
+	var userAnswer = prompt("Зимой и летом одним цветом. Ответ:");
+	if (userAnswer == answer11 || userAnswer == answer12 || userAnswer == answer13){
+		alert("Правильно! Поздравляю!");
+		rightAnswers++;
+	} else {
+		if (userAnswer == answer14){
+			alert("Круто! Вы тоже знаете этот анекдот про психиатра, тестирующего маньяка простыми загадками :)");
+		}
+		alert("Ответ не верный! Правильный ответ - " + answer13 + ".");
+	}
+
+	var userAnswer = prompt("Висит груша, нельзя скушать. Ответ:");
+	if (userAnswer == answer2){
+		alert("Правильно! Поздравляю!");
+		rightAnswers++;
+	} else {
+		alert("Ответ не верный! Правильный ответ - " + answer2 + ".");
+	}
+
+	var userAnswer = prompt("На зеленой хрупкой ножке вырос шарик у дорожки. Ответ:");
+	if (userAnswer == answer3){
+		alert("Правильно! Поздравляю!");
+		rightAnswers++;
+	} else {
+		alert("Ответ не верный! Правильный ответ - " + answer3 + ".");
+	}
+	
+	if (rightAnswers == 3)
+		alert("Ух ты! Вы отгадали все загадки!!!");	
+	else
+		alert("Правильных ответов " + rightAnswers + "!");
+	
+	document.write("Игра окончена. Спасибо за игру!");
+
+</script>

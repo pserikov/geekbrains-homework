@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Личный сайт студента GeekBrains</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+		
+		var score = 0;
+		var congratulation = "";
+		
+		function checkAnswer(inputId, answers) {
+			var userAnswer = document.getElementById(inputId).value;
+			userAnswer = userAnswer.toLowerCase();
+			for(var i = 0; i < answers.length; i++) {
+				if(userAnswer == answers[i]) {
+					score++;
+					break;
+				}
+			}
+
+		}
+
+		function checkAnswers() {
+			checkAnswer("userAnswer1", ["ель", "елка", "ёлка", "елочка", "ёлочка"]);		
+			checkAnswer("userAnswer2", ["лампочка", "лампа"]);		
+			checkAnswer("userAnswer3", ["одуванчик", "цветок"]);		
+
+			if(score == 3){
+				congratulation = "Поздравляю! Вы отгадали все загадки!"
+			}
+			alert("Правильных ответов " + score + ".\n" + congratulation);
+			score = 0;
+			congratulation = "";
+
+		}
+
+	</script>
+</head>
+<body>
+
+<div class="content">
+	<!-- TODO заменить на menu.php-->
+	<div class="header">
+		<a href="index.html">Главная</a>
+		<a href="puzzle.html">Загадки</a>
+		<a href="guess.html">Угадайка</a>
+	</div>
+
+<div class="contentWrap">
+	<div class="content">
+		<div class="center">
+
+			<h1>Поиграем в загадки?</h1>
+		
+			<div class="box">
+
+				<p>Зимой и летом одним цветом?</p>
+				<input type="text" id="userAnswer1">
+
+				<p>Висит груша, нельзя скушать?</p>
+				<input type="text" id="userAnswer2">
+
+				<p>На зеленой хрупкой ножке вырос шарик у дорожки?</p>
+				<input type="text" id="userAnswer3">
+
+				<br>
+				<a href="#" onclick="checkAnswers();">Ответить</a>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+</div>
+<!-- TODO заменить на footer.php-->
+<div class="footer">
+	Copyright &copy; Павел Сериков. 2019
+</div>
+
+</body>
+</html>

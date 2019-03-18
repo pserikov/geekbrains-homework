@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	function getRandomNumber(max){
+		return Math.round(Math.random() * max);
+	}
+
+	function compareAnswer(userAnswer, answer){
+		if(userAnswer == answer){
+			alert("Вы угадали!");
+		}
+		else {
+			alert("Неверно. Первое число " + numbers[0]);
+		}
+	}
+
+	function getRandomNumberArray(length){
+		var numbers = [];
+
+		for(var i = 0; i < length; i++){
+			var randomNumber = getRandomNumber(100);
+			numbers.push(randomNumber);
+		}
+
+		return numbers;
+	}
+	
+
+	var numbers = getRandomNumberArray(5);
+	
+	alert("Запомните числа и их порядок" + numbers);
+
+	var userAnswer = +prompt("Введите первое число:");
+	compareAnswer(userAnswer, numbers[0]);
+
+	userAnswer = +prompt("Введите последнее число:");
+	compareAnswer(userAnswer, numbers[ numbers.length - 1 ]);
+
+	var n = getRandomNumber(numbers.length - 1);
+
+	userAnswer = +prompt("Введите " + (n + 1) + " число");
+	compareAnswer(userAnswer, numbers[ n ]);
+	}
+
+</script>

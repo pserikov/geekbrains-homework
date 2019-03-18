@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	function recursiveFactorial(length){
+		if (length == 0) {
+			return 1;
+		} else 
+			// вызов самой функции внутри себя
+			// и так до тех пор, пока length != 0 и не выполнится первое условие (остальные в очередь)
+			// дальше выполнятся остальные по очереди
+			return recursiveFactorial(length - 1) * length; 
+	}
+
+	var rf = recursiveFactorial(5);
+
+	alert(rf);
+
+</script>

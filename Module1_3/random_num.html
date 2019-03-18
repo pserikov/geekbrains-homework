@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	function getRandomNumber(max){
+		var randomNumber = Math.round(Math.random() * max);
+		return randomNumber;
+		// можно проще - return Math.round(Math.random() * max);
+	}
+
+	function maxNumber(a, b){
+		if(a >= b){
+			return a;
+		} else {
+			return b;
+		}
+	}
+
+	function factorial(n) {
+		var result = 1;
+		for(var i = 1; i <= n; i++){
+			result = result * i;
+		}
+		return result;
+	}
+
+	var f = factorial(5);
+	var a = max(34, 68);
+	var c = max(a, 96) + 4; //использование функций в выражениях с параметрами, вычесленными ранее
+	var n = getRandomNumber(100);
+	var m = getRandomNumber(4);
+
+	alert(m + n);
+
+</script>

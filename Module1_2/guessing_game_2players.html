@@ -1,0 +1,87 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	alert("Игра Угадай число для двух игроков!");
+	
+	var answer = parseInt(Math.random() * 100);
+
+	var userName1 = prompt("Введите имя первого игрока:");
+	var userName2 = prompt("Введите имя второго игрока:");
+
+	do {
+		var userAnswer1 = prompt(userName1 + ", ведите число от 0 до 100 или q для выхода:");
+		var userAnswer2 = prompt(userName2 + ", ведите число от 0 до 100 или q для выхода:");
+		
+		if(userAnswer1 == answer && userAnswer2 == answer)
+			break;
+			 
+		var userAnswer = userAnswer1; 
+		userName = userName1;
+
+// -------Повторяющаяся конструкция-Начало----------
+
+		// проверка выхода
+		if(userAnswer == "q"){
+			var userExit = userName;
+			break;
+		} else {
+			// проверка на соответствие ввода числовому значению от 0 до 100
+			if(userAnswer < 0 || userAnswer > 100 || isNaN(userAnswer))
+				alert(userName + ", у вас неверный ввод!");
+				else{
+					if(userAnswer == answer){
+						alert("Поздравляю, " + userName + " вы угадали!");
+						var userWin = userName;
+						break;
+					}	
+					else if(userAnswer > answer)
+						alert(userName + ", вы ввели слишком большое число");
+					else if(userAnswer < answer)
+						alert(userName + ", вы ввели слишком маленькое число");
+				}
+			}
+
+// -------Повторяющаяся конструкция-Конец----------
+
+		userName = userName2;
+		userAnswer = userAnswer2;
+
+// -------Повторяющаяся конструкция-Начало----------
+
+		// проверка выхода
+		if(userAnswer == "q"){
+			var userExit = userName;
+			break;
+		} else {
+			// проверка на соответствие ввода числовому значению от 0 до 100
+			if(userAnswer < 0 || userAnswer > 100 || isNaN(userAnswer))
+				alert(userName + ", у вас неверный ввод!");
+				else{
+					if(userAnswer == answer){
+						alert("Поздравляю, " + userName + " вы угадали!");
+						var userWin = userName;
+						break;
+					}	
+					else if(userAnswer > answer)
+						alert(userName + ", вы ввели слишком большое число");
+					else if(userAnswer < answer)
+						alert(userName + ", вы ввели слишком маленькое число");
+				}
+			}
+
+// -------Повторяющаяся конструкция-Конец----------
+
+	} while(userAnswer != answer)
+	
+	if(userAnswer1 =="q" && userAnswer2 == "q")
+		alert("Выход по обоюдному согласию. Спасибо за игру!")
+	else if(userExit == userName1 || userExit == userName2)
+		alert("Выход из игры по инициативе игрока " + userExit +". Спасибо за игру!")
+	else if(userAnswer1 == answer && userAnswer2 == answer)
+		alert("Оба угадали! Молодцы!");
+	else 
+		alert("Победил " + userWin + "! Поздравляю!");
+	
+	alert("Правильный ответ " + answer);	
+
+</script>

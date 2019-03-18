@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	function askForWords(words){
+		while(words.length != 0){
+			var i = parseInt(Math.random() * words.length);
+			var userTranslate = prompt("Введите перевод слова " + words[i][0]);
+			if(userTranslate == words[i][1]){
+				alert("Правильно!");
+				words.splice(i, 1);
+			} else {
+			alert("Неверно. Првильный ответ " + words[i][1]);
+			}
+		}	
+	}
+
+	var easyWords = [
+		["food", "еда"],
+		["bike", "велосипед"],
+		["apple", "яблоко"],
+		["do", "делать"],
+		["mean", "иметь в виду"]
+	];
+
+	askForWords(easyWords);
+
+	alert("Вы выучили слова! Переходим на новый уровень.");
+
+	var hardWords = [
+		["homeland", "родина"],
+		["bottom", "дно"],
+		["sewerage", "канализация"],
+		["chainsaw", "бензопила"],
+		["squirrel", "белка"]
+	]
+		
+	askForWords(hardWords);
+
+	alert("Вы выучили слова! Переходим на новый уровень.")
+
+</script>

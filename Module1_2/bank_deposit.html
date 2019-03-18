@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	var depositTime = 5;
+	var revenue = 0;
+
+	alert("Программа расчитает доход от депозита под определеный годовой процент на период " + depositTime + " лет.");
+
+	do {	
+		var sum = +prompt("Введите сумму вклада:");
+		var percent = +prompt("Введите годовой процент:");
+		if (isNaN(sum) || isNaN(percent) || sum<0 || percent<0){
+			alert("Неверные значения! Используйте цифры и точку в качестве разделителя целой и десятичной части. Процент и сумма только положительные!");
+		}
+	} while (isNaN(sum) || isNaN(percent) || sum<0 || percent<0);
+
+
+	alert("Будут выведены суммы вклада и начисленные проценты за " + depositTime + " лет.");
+
+	document.write("На депозит положено " + sum + " под " + percent + " процентов годовых.<br><br>");
+
+	for (var i = 1; i <= depositTime;  i++){
+		var accuredInterest = sum * percent / 100;
+		var revenue = revenue + accuredInterest;
+		sum = sum + accuredInterest;
+		document.write("По окончании " + i + " года сумма вклада составит " + sum.toFixed(2) + ", процентов начислено " + accuredInterest.toFixed(2) + "<br>");
+	}
+	document.write("<br>Всего за " + (i - 1) + " лет доход составил " + revenue.toFixed(2) + ".");
+
+</script>

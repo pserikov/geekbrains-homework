@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	function getRandomNumber(max){
+		return Math.round(Math.random() * max);
+	}
+	
+	function generateText(letters, length) {
+		var text = "";
+		for(var i = 0; i < length; i++){
+			var n = getRandomNumber(letters.length - 1);
+			text = text + letters[n];
+		}
+		return text;
+	}
+
+	function textTyping(letters) {
+		alert("Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний — на Л, указательный — на О. Запомните расположение пальцев. Повторяйте за мной.");
+		while(true){
+			var text = generateText(letters, 10);
+			var userText = prompt("Наберите " + text);
+			if(userText == text){
+				break;
+			} else {
+				alert("Вы ошиблись, попробуте еще раз.");
+			}
+		}
+	}
+
+		alert("Вас приветствует программа по обучению слепой печати!");
+
+		var lettersLevel1 = ["ф", "а"];
+		var lettersLevel2 = ["ы", "в"];
+		var lettersLevel3 = ["о", "ж"];
+
+		textTyping(lettersLevel1);
+		alert("Все верно! Переходим к следующему уровню.");
+		
+		textTyping(lettersLevel2);
+		alert("Все верно! Переходим к следующему уровню.");
+		
+		textTyping(lettersLevel3);
+		alert("Все верно! Уровни закончились, спасибо за усердие!");
+
+</script>

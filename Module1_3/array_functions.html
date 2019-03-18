@@ -1,0 +1,103 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	function getRandomNumber(max){
+		return Math.round(Math.random() * max);
+	}
+
+	function createRandomArray(length) {
+		var randomArray = [];
+		for(var i = 0; i < length; i++){
+			var randomNumber = getRandomNumber(100);
+			randomArray.push(randomNumber);
+		}
+		return randomArray;
+	}
+
+ // Задание 1.а
+	function createSerialArray(length) {
+		var serialArray = [];
+		for (var i = 1; i <= length; i++) {
+			serialArray.push(i);
+		}
+		return serialArray;
+	}
+
+// Задание 1.b
+	function getArraySum(array) {
+		var sum = 0;
+		for(var i = 0; i < array.length; i++){
+			sum = sum + array[i];
+		}
+		return sum;
+	}
+
+// Задание 1.c
+	function getArrayMax(array) {
+		var max = array[0];
+		for(var i = 1; i < array.length; i++){
+			if(max < array[i]){
+				max = array[i];
+			}
+		}
+		return max;
+	}
+
+// Задание 1.d
+	function getArrayMin(array) {
+		var min = array[0];
+		for(var i = 1; i < array.length; i++){
+			if(min > array[i]){	
+				min = array[i];
+			}
+		}
+		return min;
+	}
+
+// Задание 1.f
+	function getEvenNumbers(array){
+		var evenNumbers = [];
+		for(var i = 0; i < array.length; i++){
+			var even = array[i] % 2; 
+			if(even == 0){
+				evenNumbers.push(array[i]);
+			}
+		}
+		return evenNumbers;
+	}
+
+	alert("Программа демонстрации нескольких функций для работы с массивами.");
+	
+	while(isNaN(n) || n < 0 || (n - parseInt(n)) != 0){
+		var n = +prompt("Введите количество элементов массива:");
+	}
+
+// Задание 1.a
+	var serialArray = createSerialArray(n);
+	alert("Результат работы функции createSerialArray() - массив из " + n + " последовательных чисел от 1 до " + n + ".\n" + serialArray);
+
+alert("А теперь создадим массив из случайных чисел от 0 до 100 размером " + n + " элементов и найдем сумму его элементов, максимальный и минимальный элемент, а так же четные элементы массива.");
+
+	var randomArray = createRandomArray(n);
+
+	alert("Результат работы функции createRandomArray() - массив случайных чисел от 0 до 100 размером " + n + " элементов:\n" + randomArray);
+
+// Задание 1.b
+	var sum = getArraySum(randomArray);
+	alert("Результат работы функции getArraySum() - сумма чисел массива:\n" + sum);
+
+// Задание 1.c
+	var max = getArrayMax(randomArray);
+	alert("Результат работы функции getArrayMax() - максимальное число массива:\n" + max);
+
+// Задание 1.d
+	var min = getArrayMin(randomArray);
+	alert("Результат работы функции getArrayMin() - минимальное число массива:\n" + min);
+
+// Задание 1.f
+	var evenNumbers = getEvenNumbers(randomArray);
+	alert("Результат работы функции getEvenNumbers() - четные числа массива:\n" + evenNumbers);
+
+	alert("Демонстрация окончена. Спасибо за внимание!");
+
+</script>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Личный сайт студента GeekBrains</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+
+		var answer = parseInt(Math.random() * 100);
+		var tryCount = 0;
+		maxTryCount = 5;
+
+		function readInt1() {
+			var number1 = document.getElementById("user1").value
+			return parseInt(number1);
+			// или так return +document.getElementById(userAnswer).value;
+		}
+		
+		function readInt2() {
+			var number2 = document.getElementById("user2").value
+			return parseInt(number2);
+			// или так return +document.getElementById(userAnswer).value;
+		}
+
+		function writeUser1(text) {
+			document.getElementById("name1").innerHTML = text;
+		}
+
+		function writeUser2(text) {
+			document.getElementById("name2").innerHTML = text;
+		}
+
+		function pressButton(text){
+			document.getElementById("button").innerHTML = text;
+			// guess();
+			document.getElementById("button").onclick = guess();
+		}
+
+		function hide(id) {
+			document.getElementById(id).style.display = "none";
+		}
+
+		function guess() {
+//			alert("Привет!");
+			var userName1 = document.getElementById("user1").value;
+			var userName2 = document.getElementById("user2").value;
+			document.getElementById("user1").value = "";
+			document.getElementById("user2").value = "";
+			writeUser1(userName1 + ", угадайте число от 0 до 100:");
+			writeUser2(userName2 + ", угадайте число от 0 до 100:");
+			pressButton("Проверить!");
+			tryCount++
+			var userAnswer1 = readInt1();
+			var userAnswer2 = readInt2();
+			if(userAnswer1 == answer || userAnswer2 == answer){
+				if(userAnswer1 == answer && userAnswer2 == answer){
+				write1("<b>Поздравляю, оба угадали!");
+				} else if(userAnswer1 == answer){
+					write1("<b>Поздравляю, " + userName1 + " Вы угадали!</b>" + userName2 + ", к сожалению, Вы проиграли.");
+				} else if(userAnswer2 == answer){
+					write1("<b>Поздравляю, " + userName2 + " Вы угадали!</b>" + userName1 + ", к сожалению, Вы проиграли.");
+				}
+				hide("button");
+				hide("user2");
+			} else if(tryCount >= maxTryCount){
+				write1("Вы проиграли.<br>Правильный ответ: " + answer + ".");
+				hide("button");
+				hide("user2");
+			} else if(user1 > answer){
+			 	write1("Вы ввели слишком большое число.<br>Попробуйте еще раз. Введите число от 0 до 100.<br>Осталось попыток " + (maxTryCount - tryCount));
+			} else if(user1 < answer){
+				write1("Вы ввели слишком маленькое число.<br>Попробуйте еще раз. Введите число от 0 до 100.<br>Осталось попыток " + (maxTryCount - tryCount));
+			}
+		}
+
+		function start(){
+			//hide("button1");
+			//hide("userName1");
+			//hide("userName2");
+			var userName1 = document.getElementById("user1").value;
+			var userName2 = document.getElementById("user2").value;
+			document.getElementById("user1").value = "";
+			document.getElementById("user2").value = "";
+			writeUser1(userName1 + ", угадайте число от 0 до 100:");
+			writeUser2(userName2 + ", угадайте число от 0 до 100:");
+			pressButton("Проверить!");
+//			while(true){
+//				guess();
+//			}
+
+		}
+
+	</script>
+</head>
+<body>
+
+<div class="content">
+	<!-- TODO заменить на menu.php-->
+	<div class="header">
+		<a href="index.html">Главная</a>
+		<a href="puzzle.html">Загадки</a>
+		<a href="guess.html">Угадайка</a>
+	</div>
+
+<div class="contentWrap">
+	<div class="content">
+		<div class="center">
+
+			<h1>Игра Угадай число</h1>
+		
+			<div class="box">
+
+				<p id="name1">Введите имя первого игрока:</p>
+				<input type="text" id="user1">
+				<p id="name2">Введите имя второго игрока:</p>
+				<input type="text" id="user2">
+				<br>
+				<a href="#" onclick="guess();" id="button">Начнем?</a>
+				
+
+<!-- 			<p id="info">Угадайте число от 0 до 100.</p>
+				<input type="text" id="userAnswer">
+				<br>
+				<a href="#" onclick="guess();" id="button2">Я угадал?</a>
+ -->
+			</div>
+
+		</div>
+	</div>
+</div>
+
+</div>
+
+<!-- TODO заменить на footer.php-->
+<div class="footer">
+	Copyright &copy; Павел Сериков. 2019
+</div>
+
+</body>
+</html>

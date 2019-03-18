@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	function makeARiddle(riddle) {
+		var userAnswer = prompt("Отгадай, что это:\n" + riddle[0]);
+		userAnswer = userAnswer.toLowerCase();
+		var length = riddle[1].length;
+		for(var i = 0; i < length; i++){
+			if(userAnswer == riddle[1][i]){
+				alert("Правильно! Поздравляю!");
+				rightAnswers++;
+				break;
+			} else {
+				if(i == length - 1){
+					alert("Ответ не верный! Правильный ответ - " + riddle[1][0] + ".");
+				}
+			}
+		}	
+	}
+
+	var rightAnswers = 0;
+
+	var riddle1 = ["Зимой и летом одним цветом?", ["ель", "елка", "ёлка", "елочка", "ёлочка"]];
+	var riddle2 = ["Висит груша, нельзя скушать?", ["лампочка", "лампа"]];
+	var riddle3 = ["На зеленой хрупкой ножке вырос шарик у дорожки?", ["одуванчик", "цветок"]];
+
+	alert("Поиграем в загадки?");
+
+	makeARiddle(riddle1);
+	makeARiddle(riddle2);
+	makeARiddle(riddle3);
+
+	if (rightAnswers == 3)
+		alert("Ух ты! Вы отгадали все загадки!!!");	
+	else
+		alert("Правильных ответов " + rightAnswers + "!");
+	
+	document.write("Игра окончена. Спасибо за игру!");
+
+</script>

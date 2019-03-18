@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	alert("Игра Угадай число!");
+	var answer = parseInt(Math.random() * 100);
+
+	do {
+		var userAnswer = prompt("Введите число от 0 до 100 или q для выхода:");
+		// проверка выхода
+		if(userAnswer == "q"){
+			alert("Пока. Спасибо за игру!");
+			break;
+		} else {
+			// проверка на соответствие
+			if(userAnswer < 0 || userAnswer > 100 || isNaN(userAnswer))
+				alert("Неверный ввод!");
+				else{
+					if(userAnswer == answer)
+						alert("Поздравляю, вы угадали!");
+					else if(userAnswer > answer)
+						alert("Вы ввели слишком большое число");
+					else if(userAnswer < answer)
+						alert("Вы ввели слишком маленькое число");
+				}
+			}
+	} while(userAnswer != answer)
+	
+	alert("Правильный ответ " + answer);	
+
+</script>

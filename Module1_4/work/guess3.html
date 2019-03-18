@@ -1,0 +1,33 @@
+
+<script type="text/javascript">
+	
+	function guess(user) {
+		var userAnswer = +prompt("Введите число от 1 до 100:");
+		if(userAnswer == answer) {
+			alert(user + ", вы угадали!");
+		} else if(userAnswer > answer) {
+			alert(user + ", вы указали слишком большое число");
+		} else if(userAnswer < answer) {
+			alert(user + ", вы указали слишком маленькое число");
+		}
+	}
+
+	var answer = parseInt(Math.random() * 100);
+	var userName = "Игрок 1";
+	var userAnswer = "";
+
+	while(true) {
+		guess(userName);
+		if(userAnswer == answer) {
+			break;
+		}
+		if(userName = "Игрок 1") {
+			username = "Игрок 2";
+		} else {
+			userName = "Игрок 1";
+		}
+	}
+
+	alert("Выиграл " + userName + ".\nПравильный ответ " + answer +".");
+
+</script>

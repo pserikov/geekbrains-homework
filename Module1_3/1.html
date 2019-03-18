@@ -1,0 +1,43 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	var riddle = ["Зимой и летом одним цветом?", ["ель", "елка", "ёлка", "елочка", "ёлочка"]];
+
+	var rightAnswers = 0;
+	var userAnswer = prompt("Отгадай, что это:\n" + riddle[0]);
+	userAnswer = userAnswer.toLowerCase();
+	var length = riddle[1].length;
+	for(var i = 0; i < length; i++){
+		if(userAnswer == riddle[1][i]){
+			alert("Правильно! Поздравляю!");
+			rightAnswers++;
+			break;
+		} else {
+			if(i == length - 1){
+				alert("Ответ не верный! Правильный ответ - " + riddle[1][1] + ".");
+			}
+		}
+	}
+
+// , ["кровь", "кровища", "крокодил", "доллар"]]
+/*	for(var i = 0; i <= length; i++){
+		if(userAnswer == riddle[1][i]){
+			alert("Правильно! Поздравляю!");
+			rightAnswers++;
+			break;
+		} else {
+			alert("Ответ не верный! Правильный ответ - " + riddle[1][1] + ".");
+			break;
+		}
+	}
+*//*	length = riddle[2].length;
+	for(var i = 0; i <= length; i++){
+		if(userAnswer == riddle[2][i]){
+			alert("Трудно поспорить, но в классическом варианте это не верный ответ.");
+		}
+	}
+*/
+
+//	alert(riddle[0]);
+
+</script>
