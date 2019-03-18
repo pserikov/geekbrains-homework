@@ -27,6 +27,7 @@
 			<a href="guess.php">Угадай число</a>
 			<a href="pass.php">Генератор паролей</a>
 			</p>
+			
 		</div>
 	</div>
 </div>
